@@ -1,0 +1,67 @@
+-- DB Setup
+-- CREATE DATABASE sales_db;
+-- SHOW DATABASES;
+-- USE sales_db;
+
+-- Table Setup
+-- CREATE TABLE Customer (
+--     customer_id INT AUTO_INCREMENT PRIMARY KEY,
+--     customer_name VARCHAR(50),
+--     email VARCHAR(100) UNIQUE,
+--     phone_number VARCHAR(50),
+--     total_orders INT DEFAULT 0
+-- );
+-- Topping Table
+-- CREATE TABLE Topping (
+--     topping_id INT AUTO_INCREMENT PRIMARY KEY,
+--     topping_name VARCHAR(100),
+--     price DECIMAL(10,2),
+--     date_released DATE,
+--     limited BOOLEAN,
+--     category ENUM('brown sugar boba', 'lychee jelly', 'honey boba') NOT NULL
+-- );
+-- Product Table 
+-- CREATE TABLE Product (
+--     product_id INT AUTO_INCREMENT PRIMARY KEY,
+--     product_name VARCHAR(100),
+--     price DECIMAL(10,2),
+--     date_released DATE,
+--     limited BOOLEAN,
+--     category ENUM('milk tea', 'fruit tea', 'tea', 'promotion', 'slush') NOT NULL
+-- );
+
+-- Promotion Table
+-- CREATE TABLE Promotion (
+--     promotion_id INT AUTO_INCREMENT PRIMARY KEY,
+--     promotion_name VARCHAR(100),
+--     startdate DATE,
+--     enddate DATE,
+--     promotion_info TEXT
+-- );
+-- Fact Table: Each Row is 1 Transaction
+-- CREATE TABLE Sales(
+--     id INT AUTO_INCREMENT PRIMARY KEY,
+--     sale_date DATETIME,
+--     -- Product
+--     product_id INT,
+--     quantity INT DEFAULT 1,
+--     product_unit_price DECIMAL(10, 2),
+--     -- Topping
+--     topping_id INT,
+--     topping_quantity INT,
+--     topping_unit_price DECIMAL(10, 2),
+--     -- Customer
+--     customer_id INT,
+--     -- Promotion
+--     promotion_id INT NULL, -- INT null means null values are allowed
+--     discount_percentage INT DEFAULT 0,
+--     sweetness ENUM("0", "25", "50", "75", "100") NOT NULL DEFAULT "100",
+--     ice_level ENUM('no ice', 'less ice', 'regular', 'extra ice') DEFAULT 'regular',
+--     FOREIGN KEY (customer_id) REFERENCES Customer(customer_id),
+--     FOREIGN KEY (product_id) REFERENCES Product(product_id),
+--     FOREIGN KEY (topping_id) REFERENCES Topping(topping_id),
+--     FOREIGN KEY (promotion_id) REFERENCES Promotion(promotion_id)
+-- );
+
+
+
