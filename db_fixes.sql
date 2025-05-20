@@ -59,11 +59,16 @@
 -- );
 
 -- Fix record in loc
-UPDATE Loc
-SET location_name = "Irvine",
-    city = "Irvine",
-    state_code = "CA"
-WHERE loc_id = 1;
+-- UPDATE Loc
+-- SET location_name = "Irvine",
+--     city = "Irvine",
+--     state_code = "CA"
+-- WHERE loc_id = 1;
+
+-- 5/20/25 Edits
+
+-- Change sale_date in sales from datetime to date
+ALTER TABLE Sales MODIFY sale_date DATE;
 
 
 

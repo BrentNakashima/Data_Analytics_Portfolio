@@ -1,2 +1,2 @@
-SELECT * FROM Loc
+SELECT VERSION()
 ;
